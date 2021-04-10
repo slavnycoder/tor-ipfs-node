@@ -1,1 +1,2 @@
-# tor-ipfs-docker-compose
+# IPFS node through TOR
+noqa
