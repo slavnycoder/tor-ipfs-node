@@ -1,0 +1,18 @@
+version: "3.1"
+
+services:
+  ipfs-node:
+    image: ipfs/go-ipfs:latest
+    command: [ "daemon", "--migrate=true", "--enable-pubsub-experiment" ]
+    networks:
+      - default
+    dns:
+      - 8.8.8.8
+    volumes:
+      - ~/data/ipfs-data/ipfs-docker-data:/data/ipfs
+      - ~/data/ipfs-data/ipfs-docker-staging:/export
+
+networks:
+  default:
+    driver: soxy-driver
+    internal: true
